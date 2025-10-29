@@ -1,25 +1,25 @@
 services:
-  windows-win11:
+  windows-11:
     image: ghcr.io/aspnmy/xchat_server:amazingcultivationsimulator_win11
-    container_name: v1_12-windows-win11
+    container_name: windows
     environment:
-      VERSION: "11l"
       DISK_SIZE: "30G"
-      RAM_SIZE: "8G"
+      VERSION: "11l"
+      RAM_SIZE: "4G"
       CPU_CORES: "4"
       LANGUAGE: "Chinese"
       REGION: "en-US"
       KEYBOARD: "en-US"
-      USERNAME: "username"
-      PASSWORD: "pwd"
+      USERNAME: "aspnmy" #默认镜像默认名
+      PASSWORD: "caixia" #默认镜像默认密码
     devices:
       - /dev/kvm
       - /dev/net/tun
     cap_add:
       - NET_ADMIN
     ports:
-      # 7818是 xchat-server-v1.12的对外端口
-      - 7818:8181
+      - 7818:8181/tcp
+      - 7818:8181/udp
       - 7777:8006
       - 7489:3389/tcp
       - 7489:3389/udp
