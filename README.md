@@ -12,7 +12,7 @@
 ```docker compose
 services:
   windows-11:
-    image: ghcr.io/aspnmy/xchat_server:amazingcultivationsimulator_win11
+    image: ghcr.io/aspnmy/xchat_server:v1.12_amazingcultivationsimulator_win11
     container_name: windows
     environment:
       DISK_SIZE: "30G"
@@ -48,7 +48,7 @@ volumes:
 ##  docker cli
 ``` dokcer cli
 docker volume create win11
-docker run --name windows -e DISK_SIZE=10G -e VERSION=11l -e RAM_SIZE=4G -e CPU_CORES=4 -e LANGUAGE=Chinese -e REGION=en-US -e KEYBOARD=en-US -e USERNAME=aspnmy -e PASSWORD=caixia --device /dev/kvm --device /dev/net/tun --cap-add NET_ADMIN -p 7818:8181 -p 7777:8006 -p 7489:3389/tcp -p 7489:3389/udp -v win11:/storage --restart always --stop-timeout 2m ghcr.io/aspnmy/xchat_server:amazingcultivationsimulator_win11
+docker run --name windows -e DISK_SIZE=10G -e VERSION=11l -e RAM_SIZE=4G -e CPU_CORES=4 -e LANGUAGE=Chinese -e REGION=en-US -e KEYBOARD=en-US -e USERNAME=aspnmy -e PASSWORD=caixia --device /dev/kvm --device /dev/net/tun --cap-add NET_ADMIN -p 7818:8181 -p 7777:8006 -p 7489:3389/tcp -p 7489:3389/udp -v win11:/storage --restart always --stop-timeout 2m ghcr.io/aspnmy/xchat_server:v1.12_amazingcultivationsimulator_win11
 
 ```
   
