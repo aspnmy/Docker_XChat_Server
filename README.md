@@ -11,8 +11,8 @@
 ##  docker compose
 ```docker compose
 services:
-  windows-xp:
-    image: dockurr/windows
+  windows-11:
+    image: ghcr.io/aspnmy/xchat_server:amazingcultivationsimulator_win11
     container_name: windows
     environment:
       DISK_SIZE: "10G"
@@ -34,11 +34,11 @@ services:
       - 7489:3389/tcp
       - 7489:3389/udp
     volumes:
-      - win-xp:/storage
+      - win11:/storage
     restart: always
     stop_grace_period: 2m
 volumes:
-  win-xp:
+  win11:
 ```
 - 使用上面的文件在本地docker环境中安装winxp系统
 - 运行 IP+7777 访问winXP的桌面
