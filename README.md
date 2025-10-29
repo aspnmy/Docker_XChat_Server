@@ -7,7 +7,7 @@
 - 客户端v6.4 对应的服务器端版本号v4.6
 - 如需自建服务器主要客户端版本号和服务器版本号一致
 
-# -------在Doker中部署winxp系统来运行Server
+# -------在Doker中部署win11系统来运行Server
 ##  docker compose
 ```docker compose
 services:
@@ -15,8 +15,8 @@ services:
     image: ghcr.io/aspnmy/xchat_server:amazingcultivationsimulator_win11
     container_name: windows
     environment:
-      DISK_SIZE: "10G"
-      VERSION: "xp"
+      DISK_SIZE: "30G"
+      VERSION: "11l"
       RAM_SIZE: "4G"
       CPU_CORES: "4"
       LANGUAGE: "Chinese"
@@ -30,6 +30,8 @@ services:
     cap_add:
       - NET_ADMIN
     ports:
+      - 7818:8181/tcp
+      - 7818:8181/udp
       - 7777:8006
       - 7489:3389/tcp
       - 7489:3389/udp
@@ -45,8 +47,8 @@ volumes:
 - 复制项目中Server中对应的服务器端到winXP中，运行对应服务器端
 ##  docker cli
 ``` dokcer cli
-docker volume create win-xp
-docker run --name windows -e DISK_SIZE=10G -e VERSION=xp -e RAM_SIZE=4G -e CPU_CORES=4 -e LANGUAGE=Chinese -e REGION=en-US -e KEYBOARD=en-US -e USERNAME=aspnmy -e PASSWORD=caixia --device /dev/kvm --device /dev/net/tun --cap-add NET_ADMIN -p 7777:8006 -p 7489:3389/tcp -p 7489:3389/udp -v win-xp:/storage --restart always --stop-timeout 2m dockurr/windows
+docker volume create win11
+docker run --name windows -e DISK_SIZE=10G -e VERSION=11l -e RAM_SIZE=4G -e CPU_CORES=4 -e LANGUAGE=Chinese -e REGION=en-US -e KEYBOARD=en-US -e USERNAME=aspnmy -e PASSWORD=caixia --device /dev/kvm --device /dev/net/tun --cap-add NET_ADMIN -p 7818:8181 -p 7777:8006 -p 7489:3389/tcp -p 7489:3389/udp -v win11:/storage --restart always --stop-timeout 2m ghcr.io/aspnmy/xchat_server:amazingcultivationsimulator_win11
 
 ```
   
