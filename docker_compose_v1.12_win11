@@ -1,6 +1,6 @@
 services:
   windows-11:
-    image: ghcr.io/aspnmy/xchat_server:amazingcultivationsimulator_win11
+    image: ghcr.io/aspnmy/xchat_server:v1.12_amazingcultivationsimulator_win11
     container_name: windows
     environment:
       DISK_SIZE: "30G"
