@@ -54,10 +54,17 @@ docker run --name windows -e DISK_SIZE=10G -e VERSION=11l -e RAM_SIZE=4G -e CPU_
 
 ## 如何发布自己的XChat-server服务器给大家使用
 
-##  - 1、自建XChat-server服务器注册到ServerLists公共节点上(需要一点编程能力)
+###  - 1、自建XChat-server服务器注册到ServerLists公共节点上(需要一点编程能力)
 将自建的服务器的ServerHost、ServerPort注册到UpdateServerLists接口上
+  - 公共节点URl：（US） https://api.caixiagame.us.earth-oline.org (默认)
+  - 公共节点URl：（CN） https://api.caixiagame.cn.earth-oline.org
+  - 公共节点URl：（TW） https://api.caixiagame.tw.earth-oline.org
+  - 推荐使用US的默认节点，其他节点只用于连接不到默认节点时的备用，数据互为镜像，只为边缘节点加速使用
+  - 参考下方注册接口的使用形式注册自建的Server到公共ServerLists上
+### - 2、从 https://github.com/aspnmy/Docker_XChat_Server/releases 下载对应的服务器端
 
-## - 2、从Releases · aspnmy/Docker_XChat_Server下载对应的服务器端
+### - 3、`/api?type=ServerSets` 所有需要存储与服务器的功能，都需要从此接口获取配置数据，Steam客户端版本号v3.5开始，部分UI数据缓存在服务器端，不进行`/api?type=ServerSets`验证的情况下，默认功能只能实现“聊天室发送消息，发送物品”的基础能力；
+在验证`/api?type=ServerSets`以后，可以进一步使用 发送NPC 、 跨地图事件、 加载公共地图事件、跨用户结婚、公共福利院、藏经阁(不需要第三方mod支持)、公共摆摊市场、发布悬赏、万界阁(基于服务器端的Mod修改器，可以生成Server_ModLists中所拥有的Mod中的物品ID写入到用户的存档文件中，并且云端保留唯一一个存档文件，不和Steam云存档冲突)
 
 ## 接口概述
 
