@@ -66,6 +66,8 @@ docker run --name windows -e DISK_SIZE=10G -e VERSION=11l -e RAM_SIZE=4G -e CPU_
 ### - 3、`/api?type=ServerSets` 所有需要存储与服务器的功能，都需要从此接口获取配置数据，Steam客户端版本号v3.5开始，部分UI数据缓存在服务器端，不进行`/api?type=ServerSets`验证的情况下，默认功能只能实现“聊天室发送消息，发送物品”的基础能力；
 在验证`/api?type=ServerSets`以后，可以进一步使用 发送NPC 、 跨地图事件、 加载公共地图事件、跨用户结婚、公共福利院、藏经阁(不需要第三方mod支持)、公共摆摊市场、发布悬赏、万界阁(基于服务器端的Mod修改器，可以生成Server_ModLists中所拥有的Mod中的物品ID写入到用户的存档文件中，并且云端保留唯一一个存档文件，不和Steam云存档冲突)
 
+### - 4、 当前可以使用Steam MOD客户端下载地址
+  - https://steamcommunity.com/sharedfiles/filedetails/?id=3557958666
 ## 接口概述
 
 本文档详细介绍API配置服务器提供的接口，特别是`UpdateServerLists`接口的使用方法。
