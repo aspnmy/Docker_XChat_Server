@@ -52,7 +52,7 @@ docker run --name windows -e DISK_SIZE=10G -e VERSION=11l -e RAM_SIZE=4G -e CPU_
 
 ```
 
-##如何发布自己的XChat-server服务器给大家使用
+## 如何发布自己的XChat-server服务器给大家使用
 
 ##  - 1、自建XChat-server服务器注册到ServerLists公共节点上(需要一点编程能力)
 将自建的服务器的ServerHost、ServerPort注册到UpdateServerLists接口上
